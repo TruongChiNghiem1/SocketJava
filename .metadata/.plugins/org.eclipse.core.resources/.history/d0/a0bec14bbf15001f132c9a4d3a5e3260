@@ -1,0 +1,30 @@
+package entities;
+
+import java.io.Serializable;
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "doctor")
+public class Doctor implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6067501781791775003L;
+	
+	@Id
+	private String id;
+	
+	private Set<String> certifications;
+	private String email;
+	private String firstName;
+	private String lastName;
+	private String phone;
+	private String specialty;
+	
+	
+}

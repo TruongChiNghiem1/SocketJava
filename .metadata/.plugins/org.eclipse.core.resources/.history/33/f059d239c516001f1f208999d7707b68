@@ -1,0 +1,20 @@
+package entities;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Department implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5951317614463105953L;
+
+	@Id
+	private String id;
+	private String location;
+	private String name;
+}

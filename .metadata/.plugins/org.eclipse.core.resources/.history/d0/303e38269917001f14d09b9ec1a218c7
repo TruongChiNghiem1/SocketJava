@@ -1,0 +1,18 @@
+package app;
+
+import java.net.ServerSocket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Server {
+	public static void main(String[] args) {
+		try(ServerSocket serverSocket = new ServerSocket(2000)){
+			ExecutorService executorService = Executors.newCachedThreadPool();
+			System.out.println("server run 2000");
+			
+			while(true) {
+				Server clientServer = new Server(executorService);
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+package entities;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Treatment implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -230094093673695763L;
+	
+	private String decription;
+	private LocalDate endDate;
+	private LocalDate startDate;
+}

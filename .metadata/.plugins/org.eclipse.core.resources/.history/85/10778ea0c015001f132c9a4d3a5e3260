@@ -1,0 +1,39 @@
+package entities;
+
+import java.io.Serializable;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "patient")
+public class Patient implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5193478249838086857L;
+	
+	@Id
+	private String id;
+	
+	private String address;
+	private int age;
+	private String firstName;
+	private String gender;
+	private String lastName;
+	private String phone;
+	
+	@OneToMany(mappedBy = "patient")
+	private List<Treatment> treatment;
+	
+	public Patient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

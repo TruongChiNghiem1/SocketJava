@@ -1,0 +1,25 @@
+package entities;
+
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Doctor implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6067501781791775003L;
+	
+	@Id
+	private String id;
+	
+	private String certifications;
+	private String email;
+	private String firstName;
+	private String lastName;
+	private String phone;
+	private String specialty;
+}

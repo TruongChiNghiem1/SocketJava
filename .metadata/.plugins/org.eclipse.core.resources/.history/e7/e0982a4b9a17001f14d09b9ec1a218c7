@@ -1,0 +1,23 @@
+package app;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ServerRun {
+	public static void main(String[] args) throws IOException {
+		try(ServerSocket serverSocket = new ServerSocket(2000)){
+			ExecutorService executorService = Executors.newCachedThreadPool();
+			System.out.println("server run 2000");
+			
+			while(true) {
+				Socket clientSocket = serverSocket.accept();
+				System.out.println("Socket run " + clientSocket);
+				
+				
+			}
+		}
+	}
+}

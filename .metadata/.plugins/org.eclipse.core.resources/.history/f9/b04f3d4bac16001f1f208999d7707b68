@@ -1,0 +1,41 @@
+package app;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+import entities.Patient;
+
+public class client {
+	private static final Scanner SC = new Scanner(System.in);
+
+	public static void main(String[] args) throws UnknownHostException, IOException, ClassNotFoundException {
+		
+		// Create a client socket and connect to the server
+		try (Socket socket = new Socket("192.168.78.118", 9999)) {
+			ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+			ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+
+		Patient p = new Patient("123 Main St", 30, "John", "Male", "PT-1", "Doe", "555-1234");
+          System.out.println(p);
+          out.writeUTF("add-Patient");
+         
+          out.writeObject(p);
+          out.flush();
+
+          String phanHoiServer = in.readUTF();
+          if (phanHoiServer.equals("THêm thành công")) {
+              Patient p1 = (Patient) in.readObject();
+            
+          } else {
+              System.out.println("Lệnh không xác định từ server.");
+          }
+			
+		}
+	}
+
+
+}

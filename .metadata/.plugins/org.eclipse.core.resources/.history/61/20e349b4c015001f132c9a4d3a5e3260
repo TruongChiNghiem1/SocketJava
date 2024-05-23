@@ -1,0 +1,43 @@
+package entities;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "doctor")
+public class Doctor implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6067501781791775003L;
+	
+	@Id
+	private String id;
+	
+	private Set<String> certifications;
+	private String email;
+	private String firstName;
+	private String lastName;
+	private String phone;
+	private String specialty;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "department")
+	private Department department;
+	
+	@OneToMany(mappedBy = "doctor")
+	private List<Treatment> treatment;
+	
+	
+	
+}

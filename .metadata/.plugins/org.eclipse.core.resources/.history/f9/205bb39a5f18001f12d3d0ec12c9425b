@@ -1,0 +1,30 @@
+package dao;
+
+import java.util.List;
+
+import entities.Doctor;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+
+public class Doctor_DAO {
+	private EntityManager entityManager;
+
+	public Doctor_DAO(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+	
+	public List<Doctor> findListDoctor(String specialty){
+		try {
+			Query q = entityManager.createQuery("SELECT d.id, d.email, d.firstName, d.lastName, d.phone, d.specialty "
+					+ "FROM doctor d WHERE specialty = :specialty", Doctor.class);
+			q.setParameter("specialty", specialty);
+			List<Doctor> listDoctorReturn = q.getResultList();
+			return listDoctorReturn;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

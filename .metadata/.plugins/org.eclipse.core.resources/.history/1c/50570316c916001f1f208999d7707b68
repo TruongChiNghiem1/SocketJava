@@ -1,0 +1,15 @@
+package app;
+
+import dao.EntityManagerFactoryUtil;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Persistence;
+
+public class RunDatabase {
+	public static void main(String[] args) {
+		EntityManagerFactoryUtil managerFactoryUtil = new EntityManagerFactoryUtil();
+		EntityManager entityManager = managerFactoryUtil.getEntitimanager();
+		
+		managerFactoryUtil.closeEntityManager();
+		managerFactoryUtil.closeEntityManagerFactory();
+	}
+}

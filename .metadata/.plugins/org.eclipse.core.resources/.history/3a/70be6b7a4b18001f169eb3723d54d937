@@ -1,0 +1,69 @@
+package app;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.List;
+import java.util.Scanner;
+
+import entities.Doctor;
+import entities.Patient;
+
+public class client {
+	public static void main(String[] args) throws UnknownHostException, IOException, ClassNotFoundException {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		try(Socket socket = new Socket("192.168.1.11", 2901)){
+			ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+			ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+			
+			Patient p = new Patient("PT-2","14 Station St", 21, "Tran","Ken", "Male",  "666-6694");
+			System.out.println("1. add-Patient \n2. delete-Patient \n3. find-Doctor");
+			String choice = sc.nextLine();
+			switch (choice) {
+			case "1":
+				out.writeUTF("add-Patient");
+				out.writeObject(p);
+				out.flush();
+				
+				String phanHoiServer = in.readUTF();
+				if(phanHoiServer.equals("Thêm thành công")) {
+					Patient p1 = (Patient) in.readObject();
+				}else {
+					System.out.println("Lệnh không xác định từ server");
+				}
+				break;
+			
+			case "2":
+				String ma = sc.nextLine();
+				out.writeUTF("delete-Patient");
+				out.writeObject(ma);
+				out.flush();
+				String phanHoiServer2 = in.readUTF();
+				break;
+			
+			case "3":
+				String specialty = sc.nextLine();
+				out.writeUTF("find-Doctor");
+				out.writeObject(specialty);
+				out.flush();
+				List<Doctor> l = (List<Doctor>) in.readObject();
+//				String phanHoiServer3 = in.readUTF();
+				for (Doctor doctor : l) {
+					System.out.println(doctor);
+				}
+				break;
+			default:
+				break;
+			}
+			
+			
+			
+	}
+	}
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="D:\Java\ONCK\server_socket_Huge\server_socket_Huge"/>
+			<item value="D:\Java\ONCK\client_socket_Huge"/>
+			<item value="D:\Java\MauOn\server_socket_CK"/>
+			<item value="D:\Java\MauOn\client_socket_CK"/>
+			<item value="D:\Java\LTPT\jpa_client_server_socket_demo\socket_jpa_server_demo"/>
+			<item value="D:\Java\LTPT\jpa_client_server_socket_demo\socket_jpa_client_demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\Java\ONCK\server_socket_Huge\server_socket_Huge"/>
+			<item value="D:\Java\ONCK\2_nghiem_server"/>
+			<item value="D:\Java\LTPT\jpa_client_server_socket_demo\socket_jpa_client_demo"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="4_nghiem_client"/>
+			<item value="4_nghiem_server"/>
+			<item value="client_nghiem_1"/>
+			<item value="server_nghiem_1"/>
+			<item value="nghiem_client"/>
+			<item value="nghiem_server"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="4_nghiem_client"/>
+			<item value="4_nghiem_server"/>
+			<item value="client_nghiem_1"/>
+			<item value="server_nghiem_1"/>
+			<item value="nghiem_client"/>
+			<item value="nghiem_server"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

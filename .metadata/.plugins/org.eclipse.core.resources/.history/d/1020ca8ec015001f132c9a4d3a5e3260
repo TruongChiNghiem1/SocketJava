@@ -1,0 +1,33 @@
+package entities;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "treatment")
+public class Treatment implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -230094093673695763L;
+	
+	private String description;
+	private LocalDate endDate;
+	private LocalDate startDate;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "doctor")
+	private Doctor doctor;
+	
+	@OneToMany(mappedBy = "patient")
+	private List<Patient> patient;
+}
