@@ -108,10 +108,8 @@ public class Server {
 
 		private void handleFindDoctor() throws ClassNotFoundException, IOException {
 			// TODO Auto-generated method stub
-			String specialy = (String) in.readObject();
-			
 			Doctor_DAO doctorDAO = new Doctor_DAO(entityManager);
-			List<Doctor> listDoctor = doctorDAO.findListDoctor(specialy);
+			List<Object[]> listDoctor = doctorDAO.findDoctorDepartment();
 		
 			out.writeUTF("tim thanh cong");
 			out.writeObject(listDoctor);

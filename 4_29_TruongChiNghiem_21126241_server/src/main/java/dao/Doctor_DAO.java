@@ -13,46 +13,6 @@ public class Doctor_DAO {
 		this.entityManager = entityManager;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public List<Object[]> findDoctorDepartment() {
 		try {
 			return entityManager.createQuery("SELECT de.name AS department, COUNT(d.id) AS count\r\n"
